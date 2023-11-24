@@ -15,7 +15,7 @@ const gallery = [
   {
     src: "/images/home.jpg",
     name: "Wooden Artifacts ",
-    description: "Explore cultural crafts and arts",
+    description: "Explore cultural crafts and arts and technology",
   },
 ];
 const Home = () => {
