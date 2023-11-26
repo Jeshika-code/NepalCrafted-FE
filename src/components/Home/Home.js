@@ -2,20 +2,22 @@ import React from "react";
 import { Carousel } from "flowbite-react";
 
 const gallery = [
+
   {
-    src: "/images/bag.png",
+    src: "/images/Home-Mirror.png",
     name: "Wooden Artifacts ",
     description: "Explore cultural crafts and arts",
   }, 
+
   {
-    src: "/images/bag.png",
-    name: "Wooden Artifacts ",
-    description: "Explore cultural crafts and arts",
+    src: "/images/Home-basket.png",
+    name: "Storage Baskets ",
+    description: "Explore cultural crafts and arts ",
   },
   {
-    src: "/images/basket.png",
-    name: "Wooden Artifacts ",
-    description: "Explore cultural crafts and arts and technology",
+    src: "/images/Pottery.png",
+    name: "Pottery ",
+    description: "Explore cultural crafts and arts",
   },
 ];
 const Home = () => {
@@ -33,7 +35,7 @@ const Home = () => {
                     alt=""
                   />
                 </div>
-                <div className="md:w-3/4 sm:w-full sm:pb-20">
+                <div className=" md:w-3/4 sm:w-full sm:pb-20">
                   <h1 className="text-2xl font-semibold md:mb-4 mb:3 md:w-3/4 leading-snug lg:text-5xl">
                     NepalCrafted{" "}
                     <span className="text-text-orange">{item.name}</span>
