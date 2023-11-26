@@ -3,17 +3,17 @@ import { Carousel } from "flowbite-react";
 
 const gallery = [
   {
-    src: "/images/home.jpg",
+    src: "/images/bag.png",
     name: "Wooden Artifacts ",
     description: "Explore cultural crafts and arts",
   }, 
   {
-    src: "/images/home2.jpg",
+    src: "/images/bag.png",
     name: "Wooden Artifacts ",
     description: "Explore cultural crafts and arts",
   },
   {
-    src: "/images/home.jpg",
+    src: "/images/basket.png",
     name: "Wooden Artifacts ",
     description: "Explore cultural crafts and arts and technology",
   },
