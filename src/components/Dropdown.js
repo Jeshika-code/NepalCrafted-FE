@@ -1,22 +1,23 @@
 // src/components/Dropdown.js
-import React, { useState } from 'react';
-
-const Dropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import React, { useState,forwardRef } from 'react';
+import withClickOutside from './Clickoutside';
+const Dropdown =forwardRef( ({isOpen,setisOpen},ref) => {
+  
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setisOpen(!isOpen);
   };
 
+
   return (
-    <div className="relative inline-block text-left">
+    <div ref={ref} className="relative inline-block text-left">
       {/* <button
         type="button"
         onClick={toggleDropdown}
         className="inline-flex justify-center  w-full px-4 py-2 text-sm font-medium text-white bg-gray-700 rounded-md focus:outline-none focus-visible:ring focus-visible:ring-gray-500 focus-visible:ring-opacity-75"
       > */}
       { <button type="button"
-        onClick={toggleDropdown} className='btn bg-button-orange text-white md:ml-8 font-semibold px-3 py-1 rounded duration-500 hover:text-text-orange  }
+        onClick={toggleDropdown} onBlur={()=>console.log("outside")}className='btn bg-button-orange text-white md:ml-8 font-semibold px-3 py-1 rounded duration-500 hover:text-text-orange  }
                 hover:bg-button-white'>
                 
         Product Categories
@@ -85,6 +86,6 @@ const Dropdown = () => {
       )}
     </div>
   );
-};
+});
 
-export default Dropdown;
+export default withClickOutside(Dropdown);
