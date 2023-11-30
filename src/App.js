@@ -12,22 +12,31 @@ import Header from "./components/component/Header.js"
 import Footer from "./components/component/Footer.js"
 import  Home from "./components/Home/Home.js"
 import HomeProduct from './components/Home/HomeProduct.js';
-
+import ProductDetails from "./components/Product/ProductDetails.js"
 function App() {
  
   return (
     <>
-    
+    <Router>
    <Header/> 
    <Home/>
    <HomeProduct/>
+   <Routes>
+    
+
+   <Route exact path="/product/:id" component={ProductDetails}/>
+   </Routes>
+  
+   
+
    {/* <Router>
    <Routes>
-  <Route exact path="/" component={Home}/>
+ 
   </Routes>   */}
    <Footer/>
+   </Router>
    
-   {/* </Router> */}
+   
 </>
   );
 }

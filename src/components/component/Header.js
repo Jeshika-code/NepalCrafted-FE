@@ -11,10 +11,10 @@ import Dropdown from "../Dropdown";
 
 const Header = () => {
   let Links = [
-    { name: "Home", link: "/" },
+    { name: "Home", link: "/HomeProduct" },
     { name: "About", link: "/" },
     { name: "Local Aritsans", link: "/" },
-    { name: "Contact", link: "/" }, { name: "Contact", link: "/" },
+    { name: "Contact", link: "/" }, 
   ];
   let [open, setOpen] = useState(false);
 
@@ -23,12 +23,12 @@ const Header = () => {
       <div className=" md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
         {/* logo section */}
         <div>
-          <img className=" h-10" src={logo} />
+          <img className="h-8 lg:h-10" src={logo} />
         </div>
         {/* Menu icon */}
         <div
           onClick={() => setOpen(!open)}
-          className="absolute right-8 top-6 cursor-pointer md:hidden w-7 h-9"
+          className="absolute right-5 top-5 cursor-pointer md:hidden w-6 h-7"
         >
           {open ? (
             <XMarkIcon className="hover:text-text-orange" />

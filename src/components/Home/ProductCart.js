@@ -13,13 +13,14 @@ const ProductCart = ({product}) => {
 }
   return (
     <>
-    <Link className='w-60 m-10 flex flex-col pb-5 shadow-md hover:shadow-2xl  ' to={product._id}>
-        <img className='w-60'src={product.images[0].url} alt={product.name} />
-        <p className='text-xl m-3'>{product.name}</p>
-        <div className='m-1 flex flex-start'>
-            <ReactStars {...options}/> <span className='m-2' >({product.numOfReviews} reviews)</span>
+    <Link className=' lg:w-60 m-5 lg:m-10 flex flex-col pb-2 shadow-md  hover:shadow-2xl rounded-md' to={`/product/${product._id}`}>
+        <img className='w-60 h-44 rounded-t-lg'src={product.images[0].url} alt={product.name} />
+        <p className='text-sm m-3 font-medium'>{product.name}</p>
+        <div className='m-1 flex flex-start text-sm'>
+            <ReactStars {...options}/> <span className=' ' >({product.
+numofReviews} reviews)</span>
         </div>
-        <span className='m-2 text-text-orange'>{`₹${product.price}`}</span>
+        <span className='m-2  text-text-orange'>{`₹${product.price}`}</span>
     </Link>
     </>
 
