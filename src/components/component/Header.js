@@ -11,7 +11,7 @@ import Dropdown from "../Dropdown";
 
 const Header = () => {
   let Links = [
-    { name: "Home", link: "/HomeProduct" },
+    { name: "Home", link: "/" },
     { name: "About", link: "/" },
     { name: "Local Aritsans", link: "/" },
     { name: "Contact", link: "/" }, 

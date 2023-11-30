@@ -1,10 +1,11 @@
 
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
+import {BrowserRouter,Route,Routes} from "react-router-dom"
 import Dropdown from './components/Dropdown.js';
 
 import Header from "./components/component/Header.js"
@@ -17,14 +18,14 @@ function App() {
  
   return (
     
-    <Router>
+    <BrowserRouter>
    <Header/> 
    <Home/>
    <HomeProduct/>
    <Routes>
     
 
-   <Route exact path="/product/:id" component={ProductDetails}/>
+   <Route exact path="/product/:id" element={<ProductDetails/>}/>
   
    
    </Routes>
@@ -36,7 +37,7 @@ function App() {
  
   </Routes>   */}
    <Footer/>
-   </Router>
+   </BrowserRouter>
    
    
 

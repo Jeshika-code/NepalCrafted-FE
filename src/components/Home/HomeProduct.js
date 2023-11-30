@@ -1,8 +1,9 @@
 import React,{useEffect} from 'react'
-import Product from "../Home/ProductCart"
+import Product from "../Home/ProductCard.js"
 import { getProduct } from "../../actions/productActions";
 import {useSelector,useDispatch} from "react-redux"
 import { useAlert } from "react-alert";
+
 const HomeProduct = () => {
   const alert=useAlert()
   const dispatch = useDispatch();
