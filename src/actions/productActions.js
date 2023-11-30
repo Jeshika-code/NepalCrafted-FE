@@ -22,9 +22,7 @@ export const getProduct =()=>async(dispatch)=>{
         payload: error.response.data.message,
       });
 }};
-export const clearErrors = () => async (dispatch) => {
-    dispatch({ type: CLEAR_ERRORS });
-  };
+
 
   export const getProductDetails = (id) => async (dispatch) => {
     try {
@@ -43,3 +41,7 @@ export const clearErrors = () => async (dispatch) => {
       });
     }
   };  
+
+  export const clearErrors = () => async (dispatch) => {
+    dispatch({ type: CLEAR_ERRORS });
+  };

@@ -1,6 +1,7 @@
 // src/components/Dropdown.js
 import React, { useState,forwardRef } from 'react';
 import withClickOutside from './Clickoutside';
+
 const Dropdown =forwardRef( ({isOpen,setisOpen},ref) => {
   
 
@@ -23,6 +24,7 @@ const Dropdown =forwardRef( ({isOpen,setisOpen},ref) => {
         Product Categories
       </button>
 }
+
       {isOpen && (
         <div className="origin-top-right absolute left-2 mt-2 w-56 rounded-md shadow-lg bg-white  opacity-4 sm:w-48 md:w-64 ">
         
@@ -34,7 +36,7 @@ const Dropdown =forwardRef( ({isOpen,setisOpen},ref) => {
           >
             <a
               href="#"
-              className="block font-semibold px-4 py-2 text-sm text-gray-700 hover:bg-gray-700"
+              className="block font-semibold px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
             >
               Nepal Paschmina
@@ -69,7 +71,7 @@ const Dropdown =forwardRef( ({isOpen,setisOpen},ref) => {
             </a>
             <a
               href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              className="block font-semibold px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
             >
               Beads Mala 

@@ -16,7 +16,7 @@ import ProductDetails from "./components/Product/ProductDetails.js"
 function App() {
  
   return (
-    <>
+    
     <Router>
    <Header/> 
    <Home/>
@@ -25,6 +25,8 @@ function App() {
     
 
    <Route exact path="/product/:id" component={ProductDetails}/>
+  
+   
    </Routes>
   
    
@@ -37,7 +39,7 @@ function App() {
    </Router>
    
    
-</>
+
   );
 }
 
