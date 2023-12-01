@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ReactStars from "react-rating-stars-component"
+// import ReactStars from "react-rating-stars-component"
 
 const ProductCart = ({product}) => {
   const options={
@@ -17,7 +17,7 @@ const ProductCart = ({product}) => {
         <img className='w-60'src={product.images[0].url} alt={product.name} />
         <p className='text-xl m-3'>{product.name}</p>
         <div className='m-1 flex flex-start'>
-            <ReactStars {...options}/> <span className='m-2' >({product.numOfReviews} reviews)</span>
+            {/* <ReactStars {...options}/> <span className='m-2' >({product.numOfReviews} reviews)</span> */}
         </div>
         <span className='m-2 text-text-orange'>{`₹${product.price}`}</span>
     </Link>
