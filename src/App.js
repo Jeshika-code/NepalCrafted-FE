@@ -15,20 +15,20 @@ import  Home from "./components/Home/Home.js"
 import HomeProduct from './components/Home/HomeProduct.js';
 import ProductDetails from "./components/Product/ProductDetails.js"
 function App() {
- 
+
   return (
-    
-    <BrowserRouter>
+    <>
+   
    <Header/> 
    <Home/>
    <HomeProduct/>
-   <Routes>
+    <Routes>
     
 
    <Route exact path="/product/:id" element={<ProductDetails/>}/>
   
    
-   </Routes>
+   </Routes> 
   
    
 
@@ -37,11 +37,12 @@ function App() {
  
   </Routes>   */}
    <Footer/>
-   </BrowserRouter>
    
    
-
-  );
+   
+   </>
+ );
+ 
 }
 
 export default App;
