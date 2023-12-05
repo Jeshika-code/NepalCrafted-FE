@@ -1,48 +1,30 @@
+import "./App.css";
+import { BrowserRouter,Route, Routes } from "react-router-dom";
 
-import './App.css';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
-import {BrowserRouter,Route,Routes} from "react-router-dom"
-import Dropdown from './components/Dropdown.js';
+import Home from "./components/Home/Home.js";
 
-import Header from "./components/component/Header.js"
-
-import Footer from "./components/component/Footer.js"
-import  Home from "./components/Home/Home.js"
-import HomeProduct from './components/Home/HomeProduct.js';
-import ProductDetails from "./components/Product/ProductDetails.js"
+import ProductDetails from "./components/Product/ProductDetails.js";
+import Layout from "./components/Layout.js";
+import Product from "./components/Product/Product.js";
+import Search from "./components/Product/Search.js";
 function App() {
-
   return (
     <>
+      <BrowserRouter>
    
-   <Header/> 
-   <Home/>
-   <HomeProduct/>
-    <Routes>
-    
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product" element={<Product/>} />
+            {/* <Route path="/product/:keyword" element={<Product/>} /> */}
+            <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/search" element={<Search />} />
 
-   <Route exact path="/product/:id" element={<ProductDetails/>}/>
-  
-   
-   </Routes> 
-  
-   
-
-   {/* <Router>
-   <Routes>
- 
-  </Routes>   */}
-   <Footer/>
-   
-   
-   
-   </>
- );
- 
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;

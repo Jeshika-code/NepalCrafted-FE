@@ -18,8 +18,8 @@ const Dropdown =forwardRef( ({isOpen,setisOpen},ref) => {
         className="inline-flex justify-center  w-full px-4 py-2 text-sm font-medium text-white bg-gray-700 rounded-md focus:outline-none focus-visible:ring focus-visible:ring-gray-500 focus-visible:ring-opacity-75"
       > */}
       { <button type="button"
-        onClick={toggleDropdown} onBlur={()=>console.log("outside")}className='btn bg-button-orange text-white md:ml-8 font-semibold px-3 py-1 rounded duration-500 hover:text-text-orange  }
-                hover:bg-button-white'>
+        onClick={toggleDropdown} onBlur={()=>console.log("outside")}className='btn hover:bg-button-orange hover:text-white md:ml-8 font-semibold px-3 py-1 rounded duration-500 text-text-orange  }
+                bg-button-white'>
                 
         Product Categories
       </button>

@@ -11,8 +11,10 @@ module.exports = {
         'button-orange':'#D94E28',
         'text-orange':'#F9744C',
         'color-grey':'#424242',
-        'light-grey':'#eeeeee',
+        'light-grey':'#f0f0f0',
+        'light-orange':'#ffcc99',
         'button-white':'	#FFFFF0',
+        'light-black':'#636363'
       }
     },
   },

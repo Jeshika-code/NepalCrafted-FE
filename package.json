@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@material-ui/lab": "^4.0.0-alpha.61",
     "@mui/icons-material": "^5.14.19",
     "@mui/material": "^5.14.19",
     "@mui/styles": "^5.14.19",

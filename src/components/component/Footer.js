@@ -21,7 +21,7 @@ const Footer = () => {
 
              </div>
         <div className="w-full md:w-1/2 lg:w-1/4 mb-4 mt-2  md:mb-0">
-          <h2 className="text-xl font-medium mb-2 ">Quick Links</h2>
+          <h2 className="lg:text-xl text-text-orange text-sm font-medium mb-2 ">Quick Links</h2>
           <ul>
             <li className="mb-1"><a href="#" className="text-sm hover:text-text-orange">Home</a></li>
             <li className="mb-1"><a href="#" className="text-sm hover:text-text-orange">About</a></li>
@@ -35,7 +35,7 @@ const Footer = () => {
         
         <div className="w-full md:w-1/2 lg:w-1/4 mb-4 mt-2  md:mb-0">
             
-        <h2 className="text-xl font-medium mb-2">Follow Us</h2>
+        <h2 className="lg:text-xl text-sm text-text-orange font-medium mb-2">Follow Us</h2>
           <div className="flex items-center space-x-4">
           <img className="h-7" src={faceBook} />
           <img className="h-7" src={instaGram} />
@@ -46,11 +46,11 @@ const Footer = () => {
        
         </div>
         <div className="w-full md:w-1/2 lg:w-1/4">
-          <h2 className="text-xl font-bold mb-4 mt-2  ">Newsletter</h2>
+          <h2 className="lg:text-xl text-sm text-text-orange font-medium mb-4 mt-2  ">Newsletter</h2>
           <p className="text-sm mb-4">Subscribe to our newsletter for updates.</p>
           <div className="flex items-center">
             <input type="email" placeholder="Your email" className="w-full px-2 py-1 rounded-l-md text-black focus:outline-none" />
-            <button className="bg-button-orange text-white px-2 py-1 rounded-r-md hover:bg-orange-700 focus:outline-none">Subscribe</button>
+            <button className="bg-button-orange text-white px-2 py-1  rounded-r-md hover:bg-orange-700 focus:outline-none">Subscribe</button>
           </div>
         </div>
       </div>
