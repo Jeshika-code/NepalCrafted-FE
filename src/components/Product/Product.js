@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
-
+import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, getProduct } from "../../actions/productActions";
 import Loader from "../component/Loader/Loader";
 import ProductCard from "../Home/ProductCard";
 
-const Product = ({match}) => {
+const Product = ({}) => {
+  const { id } = useParams();
   const dispatch=useDispatch();
   const {products,loading,error,productsCount}=useSelector(
     (state)=>state.products
   )
-  const keyword = match.params.keyword;
+  // const keyword = match.params.keyword;
   useEffect(()=>{
-    dispatch(getProduct(keyword))
-  },[dispatch,keyword]);
+    dispatch(getProduct(id))
+  },[dispatch]);
   return (
    <>
    {loading?<Loader/>:
