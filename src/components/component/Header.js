@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../logo-no-background.png";
+import { Link } from 'react-router-dom';
 import {
   Bars3Icon,
   XMarkIcon,
@@ -12,7 +13,7 @@ import Dropdown from "../Dropdown";
 const Header = () => {
   let Links = [
     { name: "Home", link: "/" },
-    { name: "About", link: "/" },
+    { name: "Product", link: "/product" },
     { name: "Local Aritsans", link: "/" },
     { name: "Contact", link: "/" }, 
   ];
@@ -54,7 +55,10 @@ const Header = () => {
           ))}
           <Dropdown />
           <div className="font-bold text-2xl cursor-pointer flex items-center  gap-2 md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 ">
-            <MagnifyingGlassIcon className=" md:ml-8 md:my-0 my-7 w-5 h-5 m-2 hover:text-button-orange transition-all duration-500 ease-in" />
+            <Link to="/search">
+            <MagnifyingGlassIcon className=" md:ml-8 md:my-0 my-7 w-5 h-5 m-2 hover:text-button-orange transition-all duration-500 ease-in"/>
+            </Link>
+          
             <UserCircleIcon className="'w-5 hover:text-button-orange h-5 m-2 transition-all duration-500 ease-in" />
             <ShoppingCartIcon className="'w-5 hover:text-button-orange transition-all duration-500 ease-in h-5 m-2" />
           </div>
