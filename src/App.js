@@ -7,6 +7,7 @@ import ProductDetails from "./components/Product/ProductDetails.js";
 import Layout from "./components/Layout.js";
 import Product from "./components/Product/Product.js";
 import Search from "./components/Product/Search.js";
+import LoginSignUp from "./components/User/LoginSignUp.js";
 function App() {
   return (
     <>
@@ -15,11 +16,12 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/product" element={<Product/>} />
-            {/* <Route path="/product/:keyword" element={<Product/>} /> */}
+            <Route exact path="/products" element={<Product/>} />
+            <Route path="/products/:keyword" element={<Product/>} />
+          
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/search" element={<Search />} />
-
+            <Route path="/login" element={<LoginSignUp />} />
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -8,12 +8,12 @@ import {
   UserCircleIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/solid";
-import Dropdown from "../Dropdown";
+// import Dropdown from "../Dropdown";
 
 const Header = () => {
   let Links = [
     { name: "Home", link: "/" },
-    { name: "Product", link: "/product" },
+    { name: "Product", link: "/products" },
     { name: "Local Aritsans", link: "/" },
     { name: "Contact", link: "/" }, 
   ];
@@ -24,7 +24,7 @@ const Header = () => {
       <div className=" md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
         {/* logo section */}
         <div>
-          <img className="h-8 lg:h-10" src={logo} />
+          <img className="h-8 lg:h-10" src={logo} alt="logo"/>
         </div>
         {/* Menu icon */}
         <div
@@ -45,21 +45,21 @@ const Header = () => {
         >
           {Links.map((link) => (
             <li className="md:ml-8 md:my-0 my-7 font-semibold">
-              <a
-                href={link.link}
+              <Link 
+              to={link.link}
                 className="text-text-grey hover:text-text-orange duration-500"
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
-          <Dropdown />
+        
           <div className="font-bold text-2xl cursor-pointer flex items-center  gap-2 md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 ">
             <Link to="/search">
             <MagnifyingGlassIcon className=" md:ml-8 md:my-0 my-7 w-5 h-5 m-2 hover:text-button-orange transition-all duration-500 ease-in"/>
             </Link>
-          
-            <UserCircleIcon className="'w-5 hover:text-button-orange h-5 m-2 transition-all duration-500 ease-in" />
+          <Link to="/login"> <UserCircleIcon className="'w-5 hover:text-button-orange h-5 m-2 transition-all duration-500 ease-in" /></Link>
+           
             <ShoppingCartIcon className="'w-5 hover:text-button-orange transition-all duration-500 ease-in h-5 m-2" />
           </div>
         </ul>

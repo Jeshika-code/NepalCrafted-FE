@@ -38,7 +38,7 @@ const ProductDetails = ({ match }) => {
   <>
   
     <div className="  lg:flex p-5 mt-16 box-border lg:mt-21    ">
-      <div className=" shadow-md w-full flex lg:flex-col justify-evenly	items-center">
+      <div className=" lg:shadow-md w-full flex lg:flex-col justify-evenly	items-center">
         <Carousel className="h-50 w-60 mt-5 ">
           {product.images &&
             product.images.map((item, i) => (
@@ -51,7 +51,11 @@ const ProductDetails = ({ match }) => {
           <h2 className="lg:text-2xl text-sm text-center font-medium  text-text-orange">
             {product.name}
           </h2>
-          <p className="text-sm p-1">Product #{product._id}</p>
+          
+          <p className="text-sm lg:m-1">Product #{product._id}</p>
+        </div>
+        <div>
+           <p className="text-sm m-1 font-normal">{product.description}</p>
         </div>
         <div className="flex items-start items-center justify-center		border-t-2 border-orange-300 border-b-2 border-orange-300 m-1">
           <ReactStars {...options} />
@@ -77,15 +81,13 @@ const ProductDetails = ({ match }) => {
             </b>
           </p>
         </div>
-        <div className="font-medium text-sm">
-          Description : <p className="font-light">{product.description}</p>
-        </div>
+      
         <button className="bg-orange-400 m-1 text-white lg:p-1  rounded-md text-sm">
           Submit Review
         </button>
       </div>
     </div>
-    <h3 className="text-center text-2xl mt-5 mb-5 ">Our Customer Reviews</h3>
+    <h3 className="text-center lg:text-2xl mt-5 mb-5 ">Our Customer Reviews</h3>
     
     {product.reviews && product.reviews[0] ? (
           <div className=" flex overflow-auto">
@@ -95,7 +97,7 @@ const ProductDetails = ({ match }) => {
               ))}
           </div>
         ) : (
-          <p className="text-center italic text-xl m-2">No Reviews Yet</p>
+          <p className="text-center italic lg:text-xl m-2">No Reviews Yet</p>
         )}
 
     
