@@ -52,10 +52,10 @@ let count = filteredProductsCount;
         <Loader />
       ) : (
         <>
-          <h2 className="mt-20 m-3 p-2 text-center lg:text-2xl text-xl">
-            All Products
+          <h2 className="mt-20 m-3 p-2 text-center lg:text-3xl text-xl">
+            All <span className="text-text-orange underline decoration-wavy decoration-gray-300		">Products</span>
           </h2>
-          <div className="flex flex-wrap justify-center lg:ml-10">
+          <div className="flex flex-wrap justify-center lg:ml-16">
             {products &&
               products.map((product) => (
                 <ProductCard key={products._id} product={product} />

@@ -26,7 +26,7 @@ const HomeProduct = () => {
           Most Popular <span className="text-text-orange"> Product</span>{" "}
         </h1>
       </div>
-      <div className=" flex flex-wrap m-5 lg:m-10 justify-center">
+      <div className=" flex flex-wrap m-5 lg:m-10 lg:ml-16 justify-center">
         {products && products.map((product) => <Product product={product} />)}
       </div>
     </>
