@@ -8,6 +8,7 @@ import {
   UserCircleIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/solid";
+import UserOptions from "./UserOptions";
 // import Dropdown from "../Dropdown";
 
 const Header = () => {
@@ -59,6 +60,7 @@ const Header = () => {
             <MagnifyingGlassIcon className=" md:ml-8 md:my-0 my-7 w-5 h-5 m-2 hover:text-button-orange transition-all duration-500 ease-in"/>
             </Link>
           <Link to="/login"> <UserCircleIcon className="'w-5 hover:text-button-orange h-5 m-2 transition-all duration-500 ease-in" /></Link>
+          {/* <UserOptions/> */}
            
             <ShoppingCartIcon className="'w-5 hover:text-button-orange transition-all duration-500 ease-in h-5 m-2" />
           </div>
