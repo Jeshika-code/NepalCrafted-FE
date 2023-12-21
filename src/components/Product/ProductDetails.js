@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, getProductDetails } from "../../actions/productActions";
@@ -28,7 +28,20 @@ const ProductDetails = ({ match }) => {
     precision: 0.5,
     edit:false
   };
+  const [quantity, setQuantity] = useState(1);
+  const increaseQuantity = () => {
+    if (product.Stock <= quantity) return;
 
+    const qty = quantity + 1;
+    setQuantity(qty);
+  };
+
+  const decreaseQuantity = () => {
+    if (1 >= quantity) return;
+
+    const qty = quantity - 1;
+    setQuantity(qty);
+  };
   return (
   <>
   {loading?(
@@ -65,9 +78,9 @@ const ProductDetails = ({ match }) => {
           <h1 className="p-1 text-sm">{`Cost: ₹${product.price}`}</h1>
           <div className="flex items-center">
             < div className="">
-              <button className="pointer bg-light-grey px-2 hover:bg-color-grey hover:text-white hover:transition duration-300 ease-in  text-center">-</button>
-              <input className="m-2 py-1 w-1/5 text-center text-sm"value="1" type="number" />
-              <button className="pointer bg-light-grey px-2 hover:bg-color-grey hover:text-white hover:transition duration-300 ease-in text-center ">+</button>
+              <button className="pointer bg-light-grey px-2 hover:bg-color-grey hover:text-white hover:transition duration-300 ease-in  text-center" onClick={decreaseQuantity}>-</button>
+              <input className="m-2 py-1 w-1/5 text-center text-sm"value={quantity} type="number"  />
+              <button className="pointer bg-light-grey px-2 hover:bg-color-grey hover:text-white hover:transition duration-300 ease-in text-center " onClick={increaseQuantity}>+</button>
               
               <button className="rounded p-1 m-1 text-sm bg-orange-400  text-white">
               Add to Cart
