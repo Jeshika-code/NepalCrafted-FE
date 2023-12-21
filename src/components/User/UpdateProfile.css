@@ -24,7 +24,7 @@
     text-align: center;
     color: rgba(0, 0, 0, 0.664);
     font-size: 1.3vmax;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
     padding: 1.3vmax;
     border-bottom: 1px solid rgba(0, 0, 0, 0.205);
     width: 50%;
@@ -55,7 +55,7 @@
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.267);
     border-radius: 4px;
-    font: 300 0.9vmax cursive;
+    font: 300 1vmax cursive;
     outline: none;
   }
   
@@ -96,10 +96,10 @@
   
   .updateProfileBtn {
     border: none;
-    background-color: tomato;
+    background-color: #ff6347;
     color: white;
     font-size: 0.9vmax;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
     width: 100%;
     padding: 0.8vmax;
     cursor: pointer;
@@ -149,7 +149,7 @@
     }
   
     .updateProfileBtn {
-      font: 300 1.9vmax "Roboto";
+      
       padding: 1.8vmax;
     }
   }

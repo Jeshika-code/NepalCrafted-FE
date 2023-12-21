@@ -7,6 +7,19 @@ header{
   
   
 }
+/* #__react-alert__{
+  font-size: small;
+  font-style: italic;
+  width: auto !important;
+  background-color: azure;
+  text-transform: lowercase;
+} */
+#__react-alert__ div div div {
+  width: auto !important;
+  font-size: small;
+  font-style: italic;
+  
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

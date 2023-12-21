@@ -12,7 +12,9 @@ import Header from "./components/component/Header.js"
 const options = {
   timeout: 5000,
   position: positions.BOTTOM_CENTER,
-  transition: transitions.SCALE,
+  transition: transitions.FADE,
+  
+  
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -13,6 +13,8 @@ import UserOptions from "./components/component/UserOptions.js";
 import Profile from "./components/User/Profile.js";
 import UpdateProfile from "./components/User/UpdateProfile.js"
 import UpdatePassword from "./components/User/UpdatePassword.js";
+import ForgotPassword from "./components/User/ForgotPassword.js";
+import ResetPassword from "./components/User/ResetPassword.js"
 import { useEffect } from "react";
 import { loadUser } from "./actions/userActions.js";
 
@@ -41,6 +43,8 @@ function App() {
             <Route path="/account" element={<Profile/>}/>
             <Route path="/me/update" element={<UpdateProfile/>}/>
             <Route path="/password/update" element={<UpdatePassword/>}/>
+            <Route path="/password/forgot" element={<ForgotPassword/>}/>
+            <Route path="/password/reset/:token" element={<ResetPassword/>}/>
             <Route path="/login" element={<LoginSignUp />} />
           </Routes>
         </Layout>

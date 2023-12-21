@@ -13,6 +13,7 @@ module.exports = {
         'color-grey':'#424242',
         'light-grey':'#f0f0f0',
         'light-orange':'#ffcc99',
+        'orange':'#ff6347',
         'button-white':'	#FFFFF0',
         'light-black':'#636363'
       }
