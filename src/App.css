@@ -4,16 +4,9 @@ header{
 *{
     scroll-behavior: smooth;
     box-sizing: border-box;
-  
-  
+
 }
-/* #__react-alert__{
-  font-size: small;
-  font-style: italic;
-  width: auto !important;
-  background-color: azure;
-  text-transform: lowercase;
-} */
+
 #__react-alert__ div div div {
   width: auto !important;
   font-size: small;
@@ -226,4 +219,19 @@ input[type="number"] {
     width: 100%;
     margin: 2vmax 0;
   }
+  .cartHeader{
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    
+  }
+  .cartPage {
+    
+    min-height: 60vh;
+  }
+}
+
+
+.cartHeader,.cartContainer{
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
 }

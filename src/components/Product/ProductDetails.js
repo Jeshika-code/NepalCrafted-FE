@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useAlert } from "react-alert";
 import Loader from "../component/Loader/Loader.js";
-
+import { addItemsToCart } from "../../actions/cartActions.js";
 const ProductDetails = ({ match }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -35,12 +35,18 @@ const ProductDetails = ({ match }) => {
     const qty = quantity + 1;
     setQuantity(qty);
   };
+ 
 
   const decreaseQuantity = () => {
     if (1 >= quantity) return;
 
     const qty = quantity - 1;
     setQuantity(qty);
+  };
+  const addToCartHandler = () => {
+    
+    dispatch(addItemsToCart(id, quantity));
+    alert.success("Item Added To Cart");
   };
   return (
   <>
@@ -79,10 +85,10 @@ const ProductDetails = ({ match }) => {
           <div className="flex items-center">
             < div className="">
               <button className="pointer bg-light-grey px-2 hover:bg-color-grey hover:text-white hover:transition duration-300 ease-in  text-center" onClick={decreaseQuantity}>-</button>
-              <input className="m-2 py-1 w-1/5 text-center text-sm"value={quantity} type="number"  />
+              <input readOnly className="m-2 py-1 w-1/5 text-center text-sm"value={quantity} type="number"  />
               <button className="pointer bg-light-grey px-2 hover:bg-color-grey hover:text-white hover:transition duration-300 ease-in text-center " onClick={increaseQuantity}>+</button>
               
-              <button className="rounded p-1 m-1 text-sm bg-orange-400  text-white">
+              <button  disabled={product.Stock < 1 ? true : false}className="rounded p-1 m-1 text-sm bg-orange hover:bg-button-orange  text-white" onClick={addToCartHandler}>
               Add to Cart
             </button>
             </div>

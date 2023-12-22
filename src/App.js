@@ -8,6 +8,7 @@ import Layout from "./components/Layout.js";
 import Product from "./components/Product/Product.js";
 import Search from "./components/Product/Search.js";
 import LoginSignUp from "./components/User/LoginSignUp.js";
+import Cart from "./components/Cart/Cart.js";
 import store from "./store.js";
 import UserOptions from "./components/component/UserOptions.js";
 import Profile from "./components/User/Profile.js";
@@ -46,6 +47,7 @@ function App() {
             <Route path="/password/forgot" element={<ForgotPassword/>}/>
             <Route path="/password/reset/:token" element={<ResetPassword/>}/>
             <Route path="/login" element={<LoginSignUp />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </Layout>
       </BrowserRouter>

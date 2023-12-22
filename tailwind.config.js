@@ -5,7 +5,7 @@ module.exports = {
   ],
 
   theme: {
-    
+   
     extend: {
       colors:{
         'button-orange':'#D94E28',
@@ -17,6 +17,7 @@ module.exports = {
         'button-white':'	#FFFFF0',
         'light-black':'#636363'
       }
+      
     },
   },
   plugins: [require('flowbite/plugin')],
