@@ -1,17 +1,15 @@
-header{
-    z-index: 10001  !important;
+header {
+  z-index: 10001 !important;
 }
-*{
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 #__react-alert__ div div div {
   width: auto !important;
   font-size: small;
   font-style: italic;
-  
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -31,17 +29,17 @@ input[type="number"] {
 .redColor {
   color: red !important;
 }
-.pagination{
+.pagination {
   display: flex;
   justify-content: center;
   padding: 0;
 }
-.page-item{
+.page-item {
   background-color: rgb(228, 236, 239);
   list-style: none;
   border: 1px solid rgba(206, 197, 197, 0.774);
-  font-family:Arial, Helvetica, sans-serif;
-  padding:0.2vmax 1.5vmax;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.2vmax 1.5vmax;
   transition: all 0.3s;
   cursor: pointer;
 }
@@ -54,7 +52,7 @@ input[type="number"] {
 }
 .page-link {
   text-decoration: none;
-  font-size:1vmax;
+  font-size: 1vmax;
   color: rgb(12, 6, 6);
   transition: all 0.3s;
 }
@@ -99,7 +97,7 @@ input[type="number"] {
   color: rgba(0, 0, 0, 0.555);
   font-size: 3vmax;
   margin-top: 40px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   transform: translateX(-10vmax) translateY(-2vmax);
 }
 
@@ -117,7 +115,7 @@ input[type="number"] {
   border: none;
   background-color: rgba(234, 114, 92, 0.989);
   font-size: 1.2vmax;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: white;
   text-decoration: none;
   padding: 0.5vmax;
@@ -141,7 +139,7 @@ input[type="number"] {
 .profileContainer > div:last-child > div > h4 {
   color: black;
   font-size: 2vmax;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 400;
   margin-top: 50px;
 }
@@ -161,8 +159,8 @@ input[type="number"] {
 .profileContainer > div:last-child > div:last-child > a {
   border: none;
   background-color: rgba(232, 74, 46, 0.989);
-  font-size:1.2vmax;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2vmax;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: white;
   text-decoration: none;
   padding: 0.5vmax;
@@ -174,7 +172,16 @@ input[type="number"] {
 }
 
 .profileContainer > div:last-child > div:last-child > a:hover {
-  background-color: #D94E28;
+  background-color: #d94e28;
+}
+.cartHeader,
+.cartContainer {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+}
+.cartGross {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
 }
 @media screen and (max-width: 600px) {
   .profileContainer {
@@ -183,17 +190,18 @@ input[type="number"] {
   }
   .profileContainer > div:first-child > h1 {
     font-size: 4vmax;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     transform: translateY(-2vmax);
     margin-top: 40px;
-    
   }
   .profileContainer > div:first-child > a {
     font-size: 2vmax;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 1vmax;  
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    padding: 1vmax;
   }
-  
+
   .profileContainer > div:last-child {
     text-align: center;
     bottom: 50px;
@@ -202,36 +210,91 @@ input[type="number"] {
   }
   .profileContainer > div:last-child > div > h4 {
     font-size: 3vmax;
-  
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
   }
 
   .profileContainer > div:last-child > div > p {
     font: 400 2vmax cursive;
-   
   }
 
   .profileContainer > div:last-child > div:last-child > a {
     font-size: 1.8vmax;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     padding: 1vmax;
-   
+
     width: 100%;
     margin: 2vmax 0;
   }
-  .cartHeader{
+  .cartHeader {
+    width: 100%;
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
-    
   }
   .cartPage {
-    
     min-height: 60vh;
+  }
+  .cartContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+  }
+  .cartInput {
+    height: 20vmax;
+  }
+
+  .cartInput > button {
+    align-items: center;
+    width: 5vmax;
+    height: 5vmax;
+  }
+
+  .cartInput > input {
+    width: 5vmax;
+    height: 5vmax;
+    padding: 2vmax;
+    font-size: 2vmax;
+  }
+  .cartSubtotal {
+    padding: 1.5vmax;
+    height: 20vmax;
+    font-size: 2.2vmax;
+  }
+  .cartGross {
+    display: grid;
+    grid-template-columns: 0fr 1.2fr;
+    }
+
+  .CartItemCard {
+    padding: 1vmax;
+    height: 25vmax;
+    margin-top: 3vmax;
+  }
+  .CartItemCard > img {
+    width: 12vmax;
+    height: 10vmax;
+    margin-top: 2vmax;
+  }
+
+  .CartItemCard > div {
+    margin: 1vmax 1vmax;
+  }
+
+  .CartItemCard > div > a {
+    font-size: 2.2vmax;
+  }
+
+  .CartItemCard > div > span {
+    font-size: 2.2vmax;
+    font-weight: 400;
+  }
+
+  .CartItemCard > div > p {
+    font-size: 1.8vmax;
+    font-weight: 500;
   }
 }
 
 
-.cartHeader,.cartContainer{
-  display: grid;
-  grid-template-columns: 4fr 1fr 1fr;
-}

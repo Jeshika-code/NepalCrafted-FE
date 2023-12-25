@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // corePlugins:{
+  //   preflight:false,
+  // },
   content: ["./src/**/*.{html,js}",
   'node_modules/flowbite-react/lib/esm/**/*.js',
   ],

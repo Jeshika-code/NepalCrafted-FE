@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import Loader from "../component/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { clearErrors, forgotPassword, updatePassword } from "../../actions/userActions";
+import { clearErrors, resetPassword, updatePassword } from "../../actions/userActions";
 import { useAlert } from "react-alert";
+import { useParams } from "react-router-dom";
 import { UPDATE_PASSWORD_RESET } from "../../constants/userConstants";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import LockIcon from "@material-ui/icons/Lock";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 const ResetPassword = (match) => {
+  // const { id } = useParams();
+  const { token } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const alert = useAlert();
@@ -26,7 +29,7 @@ const ResetPassword = (match) => {
     myForm.set("password", password);
     myForm.set("confirmPassword", confirmPassword);
 
-    dispatch(forgotPassword(match.params.token,myForm));
+    dispatch(resetPassword(token,myForm));
   };
   useEffect(() => {
     if (error) {
@@ -35,11 +38,9 @@ const ResetPassword = (match) => {
     }
     if (success) {
       alert.success("Password Updated Successfully");
-
       navigate("/login");
-
     }
-  }, [dispatch, error, alert, success]);
+  }, [dispatch, error, alert, navigate,success]);
   return (
     <>
       {loading ? (
