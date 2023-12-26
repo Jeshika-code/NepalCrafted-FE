@@ -19,8 +19,8 @@ module.exports = {
         'orange':'#ff6347',
         'button-white':'	#FFFFF0',
         'light-black':'#636363'
-      }
-      
+      },
+     
     },
   },
   plugins: [require('flowbite/plugin')],

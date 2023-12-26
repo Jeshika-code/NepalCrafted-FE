@@ -8,10 +8,12 @@ import ListAltIcon from "@material-ui/icons/ListAlt";
 import { SpeedDial, SpeedDialAction } from "@material-ui/lab";
 import { useAlert } from 'react-alert';
 import { logout } from '../../actions/userActions';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
+import { ShoppingCart } from '@material-ui/icons';
 
 
 const UserOptions = ({user}) => {
+  const {cartItems}=useSelector((state)=>state.cart)
    const [open, setOpen] = useState(false);
    const navigate = useNavigate();
    const dispatch=useDispatch();
@@ -19,6 +21,7 @@ const UserOptions = ({user}) => {
    const options = [
     { icon: <ListAltIcon />, name: "Orders", func: orders },
     { icon: <PersonIcon />, name: "Profile", func: account },
+    { icon: (<ShoppingCart style={{color:cartItems.length>0?"orange":"unset"}}/>), name:`Cart${cartItems.length})`, func: cart },
     { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
   ];
   if (user.role === "admin") {
@@ -37,6 +40,9 @@ const UserOptions = ({user}) => {
   }
   function account() {
     navigate("/account");
+  }
+  function cart() {
+   navigate("/cart");
   }
   function logoutUser() {
     dispatch(logout());
