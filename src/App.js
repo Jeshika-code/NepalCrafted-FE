@@ -9,6 +9,7 @@ import Product from "./components/Product/Product.js";
 import Search from "./components/Product/Search.js";
 import LoginSignUp from "./components/User/LoginSignUp.js";
 import Cart from "./components/Cart/Cart.js";
+import Shipping from "./components/Cart/Shipping.js";
 import store from "./store.js";
 import UserOptions from "./components/component/UserOptions.js";
 import Profile from "./components/User/Profile.js";
@@ -41,13 +42,14 @@ function App() {
           
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/account" element={<Profile/>}/>
-            <Route path="/me/update" element={<UpdateProfile/>}/>
-            <Route path="/password/update" element={<UpdatePassword/>}/>
+            <Route path="/account" element={<ProtectedRoute component={Profile} />}/>
+            <Route path="/me/update" element={<ProtectedRoute component={UpdateProfile} />}/>
+            <Route path="/password/update" element={<ProtectedRoute component={UpdatePassword} />}/>
             <Route path="/password/forgot" element={<ForgotPassword/>}/>
             <Route path="/password/reset/:token" element={<ResetPassword/>}/>
             <Route path="/login" element={<LoginSignUp />} />
             <Route path="/cart" element={<Cart />} />
+            <Route exact path="/shipping" element={<ProtectedRoute component={Shipping} />} />
           </Routes>
         </Layout>
       </BrowserRouter>
