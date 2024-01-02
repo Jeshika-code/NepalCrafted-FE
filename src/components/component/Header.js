@@ -15,7 +15,6 @@ const Header = () => {
   let Links = [
     { name: "Home", link: "/" },
     { name: "Product", link: "/products" },
-    { name: "Local Aritsans", link: "/" },
     { name: "Contact", link: "/" }, 
   ];
   let [open, setOpen] = useState(false);

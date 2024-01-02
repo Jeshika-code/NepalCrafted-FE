@@ -12,6 +12,7 @@
   .confirmCartItemsContainer > div {
     display: flex;
     font-size: 1.2vmax;
+    
     align-items: center;
     justify-content: space-between;
     margin: 2vmax 0;
@@ -34,6 +35,7 @@
   }
   .orderSummary > div > div {
     display: flex;
+    color: #575757;
     font-size: 1.2vmax;
     justify-content: space-between;
     margin: 1vmax 0;
@@ -48,6 +50,7 @@
     justify-content: space-between;
     border-top: 1px solid rgba(0, 0, 0, 0.363);
     padding: 2vmax 0;
+    color: #575757;
   }
   @media screen and (max-width: 600px) {
     .confirmOrderPage {

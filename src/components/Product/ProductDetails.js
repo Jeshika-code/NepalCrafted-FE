@@ -1,34 +1,61 @@
 import React, { useEffect,useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { useSelector, useDispatch } from "react-redux";
-import { clearErrors, getProductDetails } from "../../actions/productActions";
+import { clearErrors, getProductDetails, newReview } from "../../actions/productActions";
 import ReviewCard from "./ReviewCard.js";
 import { useParams } from "react-router-dom";
-import ReactStars from "react-rating-stars-component";
+
 import { useAlert } from "react-alert";
 import Loader from "../component/Loader/Loader.js";
 import { addItemsToCart } from "../../actions/cartActions.js";
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Button,
+} from "@material-ui/core";
+import { Rating } from "@material-ui/lab";
+import { NEW_REVIEW_RESET } from "../../constants/productConstants.js";
 const ProductDetails = ({ match }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const alert=useAlert();
   const { product, loading,error } = useSelector((state) => state.productDetails);
+  const { success, error: reviewError } = useSelector(
+    (state) => state.newReview
+  );
+
   useEffect(() => {
     if(error){
       alert.error(error);
       dispatch(clearErrors())
     }
+    if (reviewError) {
+      alert.error(reviewError);
+      dispatch(clearErrors());
+    }
+
+    if (success) {
+      alert.success("Review Submitted Successfully");
+      dispatch({ type: NEW_REVIEW_RESET});
+    }
+  
+ 
     dispatch(getProductDetails(id));
-  }, [dispatch, id,error,alert]);
+  }, [dispatch, id,error,alert,reviewError,success]);
 
   const options = {
-    size: window.innerWidth<600?20:25,
+   
+    size: "small",
     value: product.ratings,
-    isHalf:true,
+    readOnly: true,
     precision: 0.5,
-    edit:false
   };
   const [quantity, setQuantity] = useState(1);
+  const [open, setOpen] = useState(false);
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
   const increaseQuantity = () => {
     if (product.Stock <= quantity) return;
 
@@ -48,6 +75,21 @@ const ProductDetails = ({ match }) => {
     dispatch(addItemsToCart(id, quantity));
     alert.success("Item Added To Cart");
   };
+  const submitReviewToggle = () => {
+    open ? setOpen(false) : setOpen(true);
+  };
+  const reviewSubmitHandler = () => {
+    const myForm = new FormData();
+
+    myForm.set("rating", rating);
+    myForm.set("comment", comment);
+    myForm.set("productId",id);
+
+    dispatch(newReview(myForm));
+
+    setOpen(false);
+  };
+
   return (
   <>
   {loading?(
@@ -77,7 +119,7 @@ const ProductDetails = ({ match }) => {
            <p className="text-sm m-1 font-normal">{product.description}</p>
         </div>
         <div className="flex items-start items-center justify-center		border-t-2 border-orange-300 border-b-2 border-orange-300 m-1">
-          <ReactStars {...options} />
+          <Rating {...options} />
           <span className="text-sm">({product.numofReviews } Reviews)</span>
         </div>
         <div className="w-4/5">
@@ -101,13 +143,42 @@ const ProductDetails = ({ match }) => {
           </p>
         </div>
       
-        <button className="bg-orange-400 m-1 text-white lg:p-1  rounded-md text-sm">
+        <button onClick={submitReviewToggle}className="bg-orange m-1 text-white lg:p-1  rounded-md text-sm">
           Submit Review
         </button>
       </div>
     </div>
     <h3 className="text-center lg:text-2xl mt-5 mb-5 ">Our Customer Reviews</h3>
-    
+    <Dialog
+            aria-labelledby="simple-dialog-title"
+            open={open}
+            onClose={submitReviewToggle}
+          >
+            <DialogTitle>Submit Review</DialogTitle>
+            <DialogContent className="submitDialog flex flex-col">
+              <Rating
+                onChange={(e) => setRating(e.target.value)}
+                value={rating}
+                size="large"
+              />
+
+              <textarea
+                className="submitDialogTextArea border border-light-grey outline-none "
+                cols="30"
+                rows="5"
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+              ></textarea>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={submitReviewToggle} color="secondary">
+                Cancel
+              </Button>
+              <Button onClick={reviewSubmitHandler} color="primary">
+                Submit
+              </Button>
+            </DialogActions>
+</Dialog>
     {product.reviews && product.reviews[0] ? (
           <div className=" flex overflow-auto">
             {product.reviews &&

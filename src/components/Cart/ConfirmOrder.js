@@ -42,8 +42,8 @@ const ConfirmOrder = () => {
       <div className="confirmOrderPage">
         <div>
           <div className="lg:p-8 lg:pb-0 p-4">
-            <p className='lg:text-2xl font-medium'>Shipping Info</p>
-            <div className="lg:m-4 pr-8 shippingIn">
+            <p className='lg:text-2xl font-medium '>Shipping Info</p>
+            <div className="lg:m-4 pr-8 shippingIn text-grey">
               <div className='flex m-1 text-sm '>
                 <p>Name:</p>
                 <span className=' mx-1 my-0'>{user.name}</span>
@@ -59,7 +59,7 @@ const ConfirmOrder = () => {
             </div>
           </div>
           <div className="lg:p-8 lg:pb-0 p-4 ">
-            <p className='lg:text-xl font-medium'>Your Cart Items:</p>
+            <p className='lg:text-xl font-medium '>Your Cart Items:</p>
             <div className="lg:m-4 confirmCartItemsContainer">
               {cartItems &&
                 cartItems.map((item) => (

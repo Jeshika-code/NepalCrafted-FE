@@ -4,6 +4,7 @@ header {
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
+  outline: none;
 }
 
 #__react-alert__ div div div {
