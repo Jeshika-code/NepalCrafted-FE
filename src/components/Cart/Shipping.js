@@ -10,6 +10,7 @@ import { useAlert } from "react-alert";
 import CheckoutSteps from "../Cart/CheckoutSteps.js";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { saveShippingInfo } from '../../actions/cartActions.js';
 const Shipping = () => {
     const dispatch = useDispatch();
     const alert = useAlert();
@@ -23,22 +24,22 @@ const Shipping = () => {
     const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
     const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
     const shippingSubmit = (e) => {
-    //     e.preventDefault();
+        e.preventDefault();
     
-    //     if (phoneNo.length < 10 || phoneNo.length > 10) {
-    //       alert.error("Phone Number should be 10 digits Long");
-    //       return;
-    //     }
-    //     dispatch(
-    //       saveShippingInfo({ address, city, state, country, pinCode, phoneNo })
-    //     );
-    //    navigate("/order/confirm");
+        if (phoneNo.length < 10 || phoneNo.length > 10) {
+          alert.error("Phone Number should be 10 digits Long");
+          return;
+        }
+        dispatch(
+          saveShippingInfo({ address, city, state, country, pinCode, phoneNo })
+        );
+       navigate("/order/confirm");
       };
 
   return (
    <>
-   <CheckoutSteps activeSteps={0}/>
-     <div className="mt-20 w-screen max-w-full flex justify-center items-center flex-col">
+   <CheckoutSteps activeStep={0}/>
+     <div className=" w-screen max-w-full flex justify-center items-center flex-col">
         <div className="shippingBox h-96 w-50 box-border overflow-hidden">
           <h2 className="text-center lg:text-xl lg:p-2 border-b-2 border-orange m-auto w-2/4 ">Shipping Details</h2>
 

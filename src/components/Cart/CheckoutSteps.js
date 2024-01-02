@@ -3,39 +3,41 @@ import { Typography, Stepper, StepLabel, Step } from "@material-ui/core";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import LibraryAddCheckIcon from "@material-ui/icons/LibraryAddCheck";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
-
+import "./CheckoutSteps.css";
 
 const CheckoutSteps = ({ activeStep }) => {
   const steps = [
     {
-      label: <Typography>Shipping Details</Typography>,
-      icon: <LocalShippingIcon />,
+      label: <p >Shipping Details</p>,
+      icon: <LocalShippingIcon className="" />,
     },
     {
-      label: <Typography>Confirm Order</Typography>,
+      label: <p>Confirm Order</p>,
       icon: <LibraryAddCheckIcon />,
     },
     {
-      label: <Typography>Payment</Typography>,
+      label: <p>Payment</p>,
       icon: <AccountBalanceIcon />,
     },
   ];
 
   const stepStyles = {
     boxSizing: "border-box",
+    
+    
   };
   return (
     <>
-      <Stepper alternativeLabel activeStep={activeStep} style={stepStyles}>
+      <Stepper className="mt-20 text-sm "alternativeLabel activeStep={activeStep} style={stepStyles}>
         {steps.map((item, index) => (
           <Step
             key={index}
             active={activeStep === index ? true : false}
             completed={activeStep >= index ? true : false}
           >
-            <StepLabel
+            <StepLabel 
               style={{
-                color: activeStep >= index ? "tomato" : "rgba(0, 0, 0, 0.649)",
+                color: activeStep >= index ? "orangered" : "rgba(0, 0, 0, 0.649)",
               }}
               icon={item.icon}
             >

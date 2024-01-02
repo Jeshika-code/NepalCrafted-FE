@@ -1,0 +1,108 @@
+.confirmOrderPage {
+    height: 100vh;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+  }
+
+  .confirmCartItemsContainer {
+    max-height: 20vmax;
+    overflow-y: auto;
+  }
+  .confirmCartItemsContainer > div {
+    display: flex;
+    font-size: 1.2vmax;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2vmax 0;
+  }
+  
+  .confirmCartItemsContainer > div > img {
+    width: 3vmax;
+  }
+  
+  .confirmCartItemsContainer > div > a {
+    color: #575757;
+    margin: 0 2vmax;
+    width: 60%;
+    text-decoration: none;
+  }
+  
+  .confirmCartItemsContainer > div > span {
+   font-size: 1.2vmax;
+    color: #5e5e5e;
+  }
+  .orderSummary > div > div {
+    display: flex;
+    font-size: 1.2vmax;
+    justify-content: space-between;
+    margin: 1vmax 0;
+  }
+  .orderSummary > div > div > span {
+    color: rgba(0, 0, 0, 0.692);
+  }
+  
+  .orderSummaryTotal {
+    display: flex;
+   font-size: 1vmax;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.363);
+    padding: 2vmax 0;
+  }
+  @media screen and (max-width: 600px) {
+    .confirmOrderPage {
+      grid-template-columns: 1fr;
+      height: unset;
+    }
+    .confirmOrderPage > div:last-child {
+        border-left: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.247);
+      }
+      .shippingIn>div{
+        font-size: 4vw;
+     }
+       .confirmCartItemsContainer {
+        max-height: 50vw;
+      }
+       .confirmCartItemsContainer > div {
+        font-size: 4vw;
+        margin: 4vw 0;
+      }
+    
+      .confirmCartItemsContainer > div > img {
+        width: 10vw;
+      }
+    
+      .confirmCartItemsContainer > div > a {
+        margin: 0;
+        width: 30%;
+      }
+    
+      .confirmCartItemsContainer > div > span {
+        font-size: 4vw;
+      } 
+      .orderSummary {
+        padding: 10vw;
+      }
+    
+      .orderSummary > p {
+        font-size: 6vw;
+        padding: 5vw;
+      }
+    
+      .orderSummary > div > div {
+       font-size: 4vw;
+      }
+    
+      .orderSummaryTotal {
+       font-size: 4vw;
+        padding: 5vw 0;
+      }
+    
+      .orderSummary > button {
+        padding: 3vw;
+        margin: 4vw auto;
+       font-size: 4vw;
+      } 
+    
+    }
