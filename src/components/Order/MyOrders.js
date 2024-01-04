@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { DataGrid } from "@material-ui/data-grid";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -6,8 +6,6 @@ import { clearErrors, myOrders } from "../../actions/orderAction";
 
 import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
-import Typography from "@material-ui/core/Typography";
-
 import LaunchIcon from "@material-ui/icons/Launch";
 import Loader from "../component/Loader/Loader";
 
