@@ -14,6 +14,7 @@ const categories = [
   "Beads Mala",
   "Home Decor Craft",
   "Pottery Products",
+  "Jute Products",
   "Incense Product",
 ];
 function valuetext(price) {

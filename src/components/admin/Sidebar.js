@@ -18,40 +18,40 @@ const Sidebar = () => {
     {/* <Link to="/" className='p-0 '>
       <img src={logo} alt="Ecommerce" className='w-full ' />
     </Link> */}
-    <Link to="/admin/dashboard" className='text-grey p-4'>
+    <Link to="/admin/dashboard" className='text-grey hover:text-orange transition-all duration-500 ease-in p-4'>
         <p className='flex items-center'>
           <DashboardIcon /> Dashboard
         </p>
       </Link>
-      <Link className='text-grey p-4' >
+      <Link className='text-grey p-4 hover:text-orange transition-all duration-500 ease-in' >
         <TreeView
           defaultCollapseIcon={<ExpandMoreIcon />}
           defaultExpandIcon={<ImportExportIcon />}
         >
           <TreeItem nodeId="1" label="Products">
-            <Link to="/admin/products" className='text-grey p-4' >
+            <Link to="/admin/products" className='text-grey p-4 hover:text-orange transition-all duration-500 ease-in' >
               <TreeItem nodeId="2" label="All" icon={<PostAddIcon />} />
             </Link>
 
-            <Link to="/admin/product" className='text-grey p-4' >
+            <Link to="/admin/product" className='text-grey p-4 hover:text-orange transition-all duration-500 ease-in' >
               <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
             </Link>
           </TreeItem>
         </TreeView>
       </Link>
 
-      <Link to="/admin/orders" className='text-grey p-4'>
+      <Link to="/admin/orders" className='text-grey hover:text-orange transition-all duration-500 ease-in p-4'>
         <p className='flex items-center'>
           <ListAltIcon />
           Orders
         </p>
       </Link>
-      <Link to="/admin/users" className='text-grey p-4'>
+      <Link to="/admin/users" className='text-grey hover:text-orange transition-all duration-500 ease-in p-4'>
         <p className='flex items-center'>
           <PeopleIcon /> Users
         </p>
       </Link>
-      <Link to="/admin/reviews" className='text-grey p-4'>
+      <Link to="/admin/reviews" className='text-grey hover:text-orange transition-all duration-500 ease-in  p-4'>
         <p className='flex items-center' >
           <RateReviewIcon />
           Reviews
