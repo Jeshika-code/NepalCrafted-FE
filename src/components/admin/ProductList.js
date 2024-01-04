@@ -1,6 +1,5 @@
 import React, {  useEffect } from "react";
 import { DataGrid } from "@material-ui/data-grid";
-
 import "./productList.css";
 import { useSelector, useDispatch } from "react-redux";
 // import {
@@ -8,34 +7,52 @@ import { useSelector, useDispatch } from "react-redux";
 //   getAdminProduct,
 //   deleteProduct,
 // } from "../../actions/productAction";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SideBar from "./Sidebar";
-import { getAdminProduct } from "../../actions/productActions";
-import { clearErrors } from "../../actions/userActions";
-// import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
+import { clearErrors, deleteProduct, getAdminProduct } from "../../actions/productActions";
+
+import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
+
+
 const ProductList = () => {
     const dispatch = useDispatch();
-
     const alert = useAlert();
-  
+    const navigate=useNavigate();
+   
     const { error, products } = useSelector((state) => state.products);
-    useEffect(() => {
-        if (error) {
-          alert.error(error);
-          dispatch(clearErrors());
-        }
 
-    
+    const { error: deleteError, isDeleted } = useSelector(
+      (state) => state.product
+    );
+  
+    const deleteProductHandler = (id) => {
+      dispatch(deleteProduct(id));
+    };
+  
+    useEffect(() => {
+      if (error) {
+        alert.error(error);
+        dispatch(clearErrors());
+      }
+  
+      if (deleteError) {
+        alert.error(deleteError);
+        dispatch(clearErrors());
+      } 
+        if (isDeleted) {
+          alert.success("Product Deleted Successfully");
+          navigate("/admin/dashboard");
+          dispatch({ type: DELETE_PRODUCT_RESET });
+        }
         dispatch(getAdminProduct());
-      }, [dispatch, alert, error]);
+      }, [dispatch, alert, navigate,deleteError,isDeleted,error]);
     
     const columns = [
         { field: "id", headerName: "Product ID", minWidth: 200, flex: 0.5 },
-    
         {
           field: "name",
           headerName: "Name",
@@ -49,7 +66,6 @@ const ProductList = () => {
           minWidth: 150,
           flex: 0.3,
         },
-    
         {
           field: "price",
           headerName: "Price",
@@ -57,13 +73,11 @@ const ProductList = () => {
           minWidth: 270,
           flex: 0.5,
         },
-    
         {
           field: "actions",
           flex: 0.3,
           headerName: "Actions",
           minWidth: 150,
-        
           sortable: false,
           renderCell: (params) => {
             return (
@@ -71,8 +85,9 @@ const ProductList = () => {
                 <Link to={`/admin/product/${params.getValue(params.id, "id")}`}>
                   <EditIcon />
                 </Link>
-    
-                <Button
+                <Button  onClick={() =>
+                deleteProductHandler(params.getValue(params.id, "id"))
+              }
                 >
                   <DeleteIcon />
                 </Button>
@@ -82,7 +97,6 @@ const ProductList = () => {
         },
       ];
       const rows = [];
-
   products &&
     products.forEach((item) => {
       rows.push({
