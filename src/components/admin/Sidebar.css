@@ -19,5 +19,9 @@
   {
     .sidebar{
         padding: 2rem 0;
+        font-size: small;
+    }
+    .product{
+      font-size: small;
     }
   }

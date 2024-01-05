@@ -77,11 +77,6 @@ const columns=[
     });
   });
 
- 
-
-
-
-
     useEffect(() => {
         if (error) {
           alert.error(error);
@@ -98,6 +93,7 @@ const columns=[
       <Loader/>
     ) : (
       <div className="w-screen  lg:px-4 p-1  flex flex-col h-96 mb-20 max-w-full  box-border  mt-20 ">
+         <p className="text-center text-light-black bg-light-grey lg:text-xl box-border ">{user.name}'s Orders</p>
         <DataGrid
           rows={rows}
           columns={columns}
@@ -107,7 +103,7 @@ const columns=[
           autoHeight
         />
 
-        <p className="text-center text-light-black bg-light-grey lg:text-xl box-border ">{user.name}'s Orders</p>
+       
       </div>
     )}
   </>
