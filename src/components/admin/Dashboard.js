@@ -8,26 +8,30 @@ import { Chart, registerables } from 'chart.js';
 import { getAdminProduct } from "../../actions/productActions.js";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../component/Loader/Loader.js";
+import { getAllOrders } from "../../actions/orderAction.js";
+import { getAllUsers } from "../../actions/userActions.js";
 Chart.register(...registerables);
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-
   const { products,loading } = useSelector((state) => state.products);
+  const { orders } = useSelector((state) => state.allOrders);
+
+  const { users } = useSelector((state) => state.allUsers);
 
   let outOfStock = 0;
-
   products &&
     products.forEach((item) => {
       if (item.Stock === 0) {
         outOfStock += 1;
       }
     });
-
   useEffect(() => {
     dispatch(getAdminProduct());
-  
+    dispatch(getAllOrders());
+    dispatch(getAllUsers());
   }, [dispatch]);
+
     const lineState = {
         labels: ["Initial Amount", "Amount Earned"],
         datasets: [
@@ -74,13 +78,12 @@ const Dashboard = () => {
           </Link>
           <Link to="/admin/orders">
             <p>Orders</p>
-            {/* <p>{orders && orders.length}</p> */}
-            <p>2</p>
+            <p>{orders && orders.length}</p>
           </Link>
           <Link to="/admin/users">
             <p>Users</p>
-            <p>2</p>
-            {/* <p>{users && users.length}</p> */}
+            
+            <p>{users && users.length}</p>
           </Link>
         </div>
       </div>
