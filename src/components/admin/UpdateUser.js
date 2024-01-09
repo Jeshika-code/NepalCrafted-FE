@@ -11,6 +11,7 @@ import SideBar from "./Sidebar";
 import { useNavigate, useParams } from "react-router-dom";
 import { UPDATE_USER_RESET } from "../../constants/userConstants";
 import { getUserDetails, updateUser,clearErrors } from "../../actions/userActions";
+import Loader from "../component/Loader/Loader";
 
 const UpdateUser = () => {
     const dispatch = useDispatch();
@@ -50,7 +51,7 @@ const UpdateUser = () => {
       
           if (isUpdated) {
             alert.success("User Updated Successfully");
-            history.push("/admin/users");
+            navigate("/admin/users");
             dispatch({ type: UPDATE_USER_RESET });
           }
         }, [dispatch, alert, error, navigate, isUpdated, updateError, user, userId]);
@@ -72,50 +73,54 @@ const UpdateUser = () => {
     <div className="mt-10 dashboard">
         <SideBar />
         <div className=" bg-white newProductContainer">
-          <form
-            className="createProductForm"
-            encType="multipart/form-data"
-            onSubmit={updateUserSubmitHandler}
-          >
-            <h1 className="">Update Users</h1>
-            <div>
-                <PersonIcon />
-                <input
-                  type="text"
-                  placeholder="Name"
-                  required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div>
-                <MailOutlineIcon />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
+       {loading?(
+        <Loader/>
+       ):(
+        <form
+        className="createProductForm"
+        encType="multipart/form-data"
+        onSubmit={updateUserSubmitHandler}
+      >
+        <h1 className="">Update Users</h1>
+        <div>
+            <PersonIcon />
+            <input
+              type="text"
+              placeholder="Name"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div>
+            <MailOutlineIcon />
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-              <div>
-                <VerifiedUserIcon />
-                <select value={role} onChange={(e) => setRole(e.target.value)}>
-                  <option value="">Choose Role</option>
-                  <option value="admin">Admin</option>
-                  <option value="user">User</option>
-                </select>
-              </div>
-           
-            <Button
-              id="createProductBtn"
-              type="submit"
-              disabled={loading ? true : false}
-            >
-              Update
-            </Button>
-          </form>
+          <div>
+            <VerifiedUserIcon />
+            <select value={role} onChange={(e) => setRole(e.target.value)}>
+              <option value="">Choose Role</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+          </div>
+       
+        <Button
+          id="createProductBtn"
+          type="submit"
+          disabled={loading ? true : false}
+        >
+          Update
+        </Button>
+      </form>
+       )}
         </div>
       </div>
    </>

@@ -113,7 +113,7 @@ const UserList = () => {
     <div className="dashboard mt-10 ">
         <SideBar />
         <div className="productListContainer ">
-          <h1 className="productListHeading mt-10 p-2 font-medium m-2 text-center text-xl ">ALL USERS</h1>
+          <h1 className="productListHeading lg:mt-10 lg:p-2  lg:m-2 text-center text-xl userheading">All Users</h1>
 
           <DataGrid
             rows={rows}

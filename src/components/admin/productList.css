@@ -48,4 +48,10 @@
   @media screen and (max-width: 600px) {
     .productListTable div {
      font-size: 4vw;
+    }
+    .userheading{
+      width: 14rem;
+      padding: 2vmax;
+      margin-left: 20px;
+      
     }}
