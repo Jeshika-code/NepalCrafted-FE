@@ -40,6 +40,7 @@ import OrderProcess from "./components/admin/OrderProcess.js"
 import UserList from "./components/admin/UserList.js"
 import UpdateUser from "./components/admin/UpdateUser.js"
 import productReviews from "./components/admin/productReviews.js"
+import NotFound from "./components/component/NotFound.js";
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
@@ -107,7 +108,12 @@ function App() {
             <Route exact path="/admin/user/:id" element={<ProtectedRoute isAdmin={true}component={UpdateUser} />} />
 
             <Route exact path="/admin/reviews" element={<ProtectedRoute isAdmin={true}component={productReviews} />} />
-
+            {/* <Route
+          component={
+            window.location.pathname === "/process/payment" ? null : NotFound
+          }
+        /> */}
+       <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>

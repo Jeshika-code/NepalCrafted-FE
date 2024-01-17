@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-const Search = ({}) => {
+const Search = () => {
   const navigate = useNavigate();
     const [keyword, setKeyword] = useState("")
     const searchSubmitHandler = (e) => {
@@ -22,7 +22,7 @@ const Search = ({}) => {
           placeholder="Search a Product ..."
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <input className="p-2 border-none outline-none hover:bg-orange-400 h-10 bg-orange-300 w-20"type="submit" value="Search" />
+        <input className="p-2 border-none outline-none hover:bg-orange-400 h-10 bg-orange w-20"type="submit" value="Search" />
       </form>
       </div>
     </>

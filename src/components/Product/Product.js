@@ -12,7 +12,6 @@ import Typography from "@material-ui/core/Typography";
 const categories = [
   "Hemp Products",
   "Beads Mala",
-  "Home Decor Craft",
   "Pottery Products",
   "Jute Products",
   "Incense Product",
@@ -20,8 +19,8 @@ const categories = [
 function valuetext(price) {
   return `${price}`;
 }
-const Product = ({ match }) => {
-  const { id } = useParams();
+const Product = ({  }) => {
+  const { keyword } = useParams();
 
   const dispatch = useDispatch();
   const alert=useAlert();
@@ -32,7 +31,7 @@ const Product = ({ match }) => {
   
   const { products, loading, error, productsCount, resultPerPage,filteredProductsCount, } =
     useSelector((state) => state.products);
-  // const keyword=match.params.keyword;
+
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
   };
@@ -44,8 +43,8 @@ const Product = ({ match }) => {
       alert.error(error);
       dispatch(clearErrors());
     }
-    dispatch(getProduct(id, currentPage, price,category));
-  }, [dispatch, id, currentPage, price,category,alert,error]);
+    dispatch(getProduct(keyword,currentPage, price,category));
+  }, [dispatch, keyword, currentPage, price,category,alert,error]);
 let count = filteredProductsCount;
   return (
     <>
