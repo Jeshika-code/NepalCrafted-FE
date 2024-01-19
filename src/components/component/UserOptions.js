@@ -60,11 +60,11 @@ const UserOptions = ({user}) => {
         icon={
           <img
             className="rounded-full h-8 w-16"
-            src={user.avatar.url ? user.avatar.url :'/profile.jpg'}
+            src={user?.avatar?.url ? user?.avatar?.url :'/profile.jpg'}
             alt="Profile"
           />}
           >
- {options.map((item) => (
+ {options?.map((item) => (
           <SpeedDialAction
             key={item.name}
             icon={item.icon}
