@@ -24,7 +24,7 @@ const UserOptions = ({user}) => {
     { icon: (<ShoppingCart style={{color:cartItems.length>0?"orange":"unset"}}/>), name:`Cart (${cartItems.length})`, func: cart },
     { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
   ];
-  if (user.role === "admin") {
+  if (user?.role === "admin") {
     options.unshift({
       icon: <DashboardIcon />,
       name: "Dashboard",
