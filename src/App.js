@@ -69,6 +69,7 @@ function App() {
          <Route exact path="/process/payment" element={<ProtectedRoute component={Payment} />} />
             
           </Routes>
+         
      </Elements>
       )}
      

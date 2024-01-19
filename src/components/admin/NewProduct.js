@@ -34,6 +34,7 @@ const NewProduct = () => {
         "Jute Products",
         "Pottery Products",
         "Incense Product",
+        "Bamboo Products"
     ];
   
     useEffect(() => {

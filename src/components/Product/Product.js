@@ -8,7 +8,6 @@ import ProductCard from "../Home/ProductCard";
 import Pagination from "react-js-pagination";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import Typography from "@material-ui/core/Typography";
 const categories = [
   "Hemp Products",
   "Beads Mala",
